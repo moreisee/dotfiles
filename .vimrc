@@ -1,5 +1,7 @@
 set clipboard+=unnamed
 
+set number
+
 set pastetoggle=<F2>
 
 set backupdir=~/.vim/backup/
@@ -35,6 +37,7 @@ Bundle 'gmarik/vundle'
 " Bundle 'tpope/vim-rails.git'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'terryma/vim-multiple-cursors'
 "vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
