@@ -1,6 +1,9 @@
+set number
 set clipboard+=unnamed
 
-set number
+syntax on
+
+au BufRead,BufNewFile *.spec setfiletype python
 
 set pastetoggle=<F2>
 
@@ -13,10 +16,19 @@ set expandtab
 set autoindent
 set smartindent
 
+set backspace=2
+
+inoremap # X<BS>#
+
+set hlsearch
+noremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>m :CtrlPMRUFiles<CR>
 nnoremap <leader>t :CtrlPTag<CR>
+
+command Pyin !pyinstaller % -y
 
 set nocompatible               " be iMproved
 filetype off                   " required!
@@ -31,14 +43,17 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
-" Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/syntastic'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Bundle 'tpope/vim-rails.git'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'terryma/vim-multiple-cursors'
+" Bundle 'terryma/vim-multiple-cursors'
 "vim-scripts repos
+Bundle 'scrooloose/syntastic'
+Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 " non github repos
